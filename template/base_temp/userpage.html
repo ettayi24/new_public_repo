@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "base_temp/basepage.html" %}
+{% block mainblock %}
+    <style>
+        table,th,td{
+            border: 2px solid black;
+        }
+    </style>
+    <div class="container">
+        <h1>User Details</h1>
+    {% if userdata %}
+    <table>
+        <thead>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>EMAIL ID</th>
+        </thead>
+        {% for i in userdata %}
+        <tr>
+            <td>{{i.first_name }}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3>no data's found</h3>
+    {% endif %}
+    </div>
+    {% endblock %}

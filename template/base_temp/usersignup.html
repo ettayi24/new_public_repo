@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base_temp/basepage.html' %}
+{% block mainblock %}
+<div class="container">
+    <div class="jumbotron">
+        {% if registered == True %}
+    <h3 class="alert alert-danger" role="alert">Thank you for registering</h3>
+
+    {% else %}
+        <h2>User signup form</h2>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{user_form.as_p}}
+        {{profile_form.as_p}}
+
+        <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "base_temp/basepage.html" %}
+{% block mainblock %}
+<div class="container">
+    <h3>Form</h3>
+    <form  action="form"  method="post" >
+        {% if error == 1 %}
+        <h4 class="alert alert-danger" role="alert">minimum length 3 is required</h4>
+        {% endif %}
+        {% if error2 == 1 %}
+        <h4 class="alert alert-danger" role="alert">got you amal!</h4>
+        {% endif %}
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="submit">
+    </form>
+{% endblock %}
