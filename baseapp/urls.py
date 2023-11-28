@@ -19,7 +19,8 @@ from django.urls import path,include
 from . import views
 
 urlpatterns = [
-    path('',views.base,name='basepage'),
+    path('',views.index,name='index'),
+    path('basepage',views.base,name='basepage'),
     path('user',views.users,name='user'),
     path('form',views.form_view,name='form'),
     path('signup',views.signup,name='signup'),

@@ -91,3 +91,7 @@ def Log_in(request):
 def Log_out(request):
     logout(request)
     return render(request,'base_temp/basepage.html')
+
+
+def index(request):
+    return render(request,'base_temp/index.html')
